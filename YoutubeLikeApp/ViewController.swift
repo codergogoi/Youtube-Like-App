@@ -16,7 +16,14 @@ class HomeController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView?.backgroundColor = UIColor.white
-        navigationItem.title = "Home"
+ 
+        let titleView = UILabel(frame: CGRect(x: 40, y: 0, width: self.view.frame.size.width - 40, height: 40))
+        titleView.text = "Home"
+        titleView.textColor = UIColor.white
+        titleView.font = UIFont.systemFont(ofSize: 18)
+        navigationItem.titleView = titleView
+        navigationController?.navigationBar.isTranslucent = false
+        
         collectionView?.register(HomeCellView.self, forCellWithReuseIdentifier: homeIdentifier)
         collectionView?.alwaysBounceVertical = true
         
@@ -48,7 +55,7 @@ extension HomeController : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: self.view.frame.width, height: 300)
+        return CGSize(width: self.view.frame.width, height: 280)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -67,7 +74,7 @@ class HomeCellView : UICollectionViewCell{
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.contentMode = .scaleAspectFill
         imgView.clipsToBounds = true
-        imgView.backgroundColor = UIColor.lightGray
+        imgView.image = #imageLiteral(resourceName: "mock")
         
         return imgView
  
@@ -81,6 +88,9 @@ class HomeCellView : UICollectionViewCell{
         imgView.contentMode = .scaleAspectFill
         imgView.clipsToBounds = true
         imgView.backgroundColor = UIColor.cyan
+        imgView.layer.masksToBounds = true
+        imgView.layer.cornerRadius = 20
+        imgView.image = #imageLiteral(resourceName: "profile")
        
         return imgView
     }()
@@ -90,8 +100,8 @@ class HomeCellView : UICollectionViewCell{
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont.systemFont(ofSize: 14)
-        lbl.backgroundColor = UIColor.blue
-        lbl.text = "Title will be display here"
+        lbl.textColor = UIColor.darkGray
+        lbl.text = "WWDC 2017 Event"
         
         return lbl
         
@@ -102,7 +112,7 @@ class HomeCellView : UICollectionViewCell{
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont.systemFont(ofSize: 12)
-        lbl.backgroundColor = UIColor.red
+        lbl.textColor = UIColor.lightGray
         lbl.text = "Description will display here"
         return lbl
         
