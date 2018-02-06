@@ -12,6 +12,13 @@ class HomeController: UICollectionViewController {
 
     private var homeIdentifier = "cellId"
     
+    var topToolBarView : UIView = {
+       
+        let topView = CustomToolBarView()
+        topView.translatesAutoresizingMaskIntoConstraints = false
+         return topView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +33,20 @@ class HomeController: UICollectionViewController {
         
         collectionView?.register(HomeCellView.self, forCellWithReuseIdentifier: homeIdentifier)
         collectionView?.alwaysBounceVertical = true
+        collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        setupCustomToolbar()
+        
+    }
+    
+    func setupCustomToolbar(){
+        
+        self.view.addSubview(topToolBarView)
+        
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": topToolBarView]))
+        
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(50)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": topToolBarView]))
+        
+        
         
     }
 

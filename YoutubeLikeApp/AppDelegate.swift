@@ -26,8 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootViewController
         
         UINavigationBar.appearance().barTintColor =  UIColor(red: 252/255, green: 0, blue: 0, alpha: 1)
-        
         UIApplication.shared.statusBarStyle = .lightContent
+        UINavigationBar.appearance().shadowImage = UIImage()
+ 
+        let topView = UIView()
+        topView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        topView.translatesAutoresizingMaskIntoConstraints = false
+        
+        window?.addSubview(topView)
+        
+        window?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": topView]))
+        window?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(20)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": topView]))
         
  
         return true

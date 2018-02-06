@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8041B2D202977B900CA4CFA /* CustomToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8041B2C202977B900CA4CFA /* CustomToolBarView.swift */; };
 		B8DF758C202822D300D3E6BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DF758B202822D300D3E6BA /* AppDelegate.swift */; };
 		B8DF758E202822D400D3E6BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DF758D202822D400D3E6BA /* ViewController.swift */; };
 		B8DF7594202822D400D3E6BA /* YoutubeLikeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8DF7592202822D400D3E6BA /* YoutubeLikeApp.xcdatamodeld */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8041B2C202977B900CA4CFA /* CustomToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolBarView.swift; sourceTree = "<group>"; };
 		B8DF7588202822D300D3E6BA /* YoutubeLikeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubeLikeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DF758B202822D300D3E6BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8DF758D202822D400D3E6BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				B8DF7597202822D400D3E6BA /* LaunchScreen.storyboard */,
 				B8DF759A202822D400D3E6BA /* Info.plist */,
 				B8DF7592202822D400D3E6BA /* YoutubeLikeApp.xcdatamodeld */,
+				B8041B2C202977B900CA4CFA /* CustomToolBarView.swift */,
 			);
 			path = YoutubeLikeApp;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				B8DF7594202822D400D3E6BA /* YoutubeLikeApp.xcdatamodeld in Sources */,
 				B8DF758E202822D400D3E6BA /* ViewController.swift in Sources */,
 				B8DF758C202822D300D3E6BA /* AppDelegate.swift in Sources */,
+				B8041B2D202977B900CA4CFA /* CustomToolBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
