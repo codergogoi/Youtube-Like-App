@@ -24,10 +24,10 @@ class HomeController: UICollectionViewController {
         
         collectionView?.backgroundColor = UIColor.white
  
-        let titleView = UILabel(frame: CGRect(x: 40, y: 0, width: self.view.frame.size.width - 40, height: 40))
+        let titleView = UILabel(frame: CGRect(x: 70, y: 0, width: self.view.frame.size.width - 70, height: 40))
         titleView.text = "Home"
         titleView.textColor = UIColor.white
-        titleView.font = UIFont.systemFont(ofSize: 18)
+        titleView.font = UIFont.boldSystemFont(ofSize: 18)
         navigationItem.titleView = titleView
         navigationController?.navigationBar.isTranslucent = false
         
@@ -35,8 +35,32 @@ class HomeController: UICollectionViewController {
         collectionView?.alwaysBounceVertical = true
         collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         setupCustomToolbar()
+        setupNagivationItems()
         
     }
+    
+    func setupNagivationItems(){
+        
+        let searchImage = UIImage(named:"search")?.withRenderingMode(.alwaysOriginal)
+         let searchIcon = UIBarButtonItem(image: searchImage!, style: .plain, target: self, action: #selector(searchVideo))
+        
+        let moreImage = UIImage(named:"more")?.withRenderingMode(.alwaysOriginal)
+        let moreIcon = UIBarButtonItem(image: moreImage, style: .plain, target: self, action: #selector(moreOptions))
+        navigationItem.rightBarButtonItems = [moreIcon, searchIcon]
+    }
+    
+    
+    //MARK: - Navigation Bar buttonTap Action
+    @objc func searchVideo(){
+        
+        print("Working search...")
+    }
+    
+    @objc func moreOptions(){
+        
+        print("On More button tap...")
+    }
+    
     
     func setupCustomToolbar(){
         
@@ -45,7 +69,6 @@ class HomeController: UICollectionViewController {
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": topToolBarView]))
         
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(50)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": topToolBarView]))
-        
         
         
     }

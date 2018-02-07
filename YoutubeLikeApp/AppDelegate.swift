@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         window?.rootViewController = rootViewController
         
-        UINavigationBar.appearance().barTintColor =  UIColor(red: 252/255, green: 0, blue: 0, alpha: 1)
+        UINavigationBar.appearance().barTintColor =  UIColor(red: 227/255, green: 37/255, blue: 36/255, alpha: 1)
         UIApplication.shared.statusBarStyle = .lightContent
         UINavigationBar.appearance().shadowImage = UIImage()
  

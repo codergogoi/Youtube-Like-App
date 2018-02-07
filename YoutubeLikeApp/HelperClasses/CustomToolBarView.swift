@@ -10,7 +10,7 @@ import UIKit
 
 class CustomToolBarView: UIView {
     
-    var optionsArray  = ["Home", "Category", "Watch Later","Account"]
+    var iconNameArray  = ["home", "trends", "videos","account"]
 
     private let identifier = "customToolbarCell"
     
@@ -19,7 +19,7 @@ class CustomToolBarView: UIView {
         let layout = UICollectionViewFlowLayout()
 
         let collView =  UICollectionView.init(frame: .zero, collectionViewLayout: layout)
-        collView.backgroundColor =  UIColor(red: 252/255, green: 0, blue: 0, alpha: 1)
+        collView.backgroundColor =  UIColor(red: 227/255, green: 37/255, blue: 36/255, alpha: 1)
         collView.translatesAutoresizingMaskIntoConstraints = false
         collView.delegate  = self
         collView.dataSource = self
@@ -62,6 +62,8 @@ extension CustomToolBarView : UICollectionViewDelegate, UICollectionViewDataSour
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! ButtonCell
         
+        cell.iconImg.image = UIImage(named: self.iconNameArray[indexPath.row])?.withRenderingMode(.alwaysTemplate)
+        
         return cell
     }
     
@@ -76,6 +78,11 @@ extension CustomToolBarView : UICollectionViewDelegate, UICollectionViewDataSour
         return 0.2
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+    }
+    
     
     
 }
@@ -83,14 +90,36 @@ extension CustomToolBarView : UICollectionViewDelegate, UICollectionViewDataSour
 
 class ButtonCell : UICollectionViewCell {
     
-    let iconImg: UIImageView = {
+    var iconImg: UIImageView = {
        
         let icon = UIImageView()
         icon.translatesAutoresizingMaskIntoConstraints = false
-        icon.backgroundColor = UIColor.lightGray
+        icon.contentMode = .scaleAspectFill
+        icon.tintColor = UIColor(red: 91/255, green: 14/255, blue: 13/255, alpha: 1)
+        
         return icon
     }()
     
+    override var isSelected : Bool{
+        
+        didSet{
+            iconImg.tintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+         }
+        
+    }
+    
+
+    
+    override var isHighlighted: Bool{
+    
+        didSet{
+           // iconImg.tintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        }
+        
+    }
+    
+    
+ 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -104,8 +133,8 @@ class ButtonCell : UICollectionViewCell {
         
         addSubview(iconImg)
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[v0(40)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": iconImg]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(40)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": iconImg]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[v0(30)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": iconImg]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(30)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": iconImg]))
         
         addConstraint(NSLayoutConstraint(item: iconImg, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         

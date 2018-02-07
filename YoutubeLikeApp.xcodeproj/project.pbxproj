@@ -76,6 +76,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8A00717202B2C96007F0106 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B8DF758D202822D400D3E6BA /* ViewController.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B8A00718202B2CA3007F0106 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				B8041B2C202977B900CA4CFA /* CustomToolBarView.swift */,
+			);
+			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		B8A00719202B2CBE007F0106 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B8DF7592202822D400D3E6BA /* YoutubeLikeApp.xcdatamodeld */,
+				B8DF7595202822D400D3E6BA /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		B8DF757F202822D300D3E6BA = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +124,12 @@
 		B8DF758A202822D300D3E6BA /* YoutubeLikeApp */ = {
 			isa = PBXGroup;
 			children = (
+				B8A00717202B2C96007F0106 /* ViewModels */,
+				B8A00718202B2CA3007F0106 /* HelperClasses */,
+				B8A00719202B2CBE007F0106 /* SupportingFiles */,
 				B8DF758B202822D300D3E6BA /* AppDelegate.swift */,
-				B8DF758D202822D400D3E6BA /* ViewController.swift */,
-				B8DF7595202822D400D3E6BA /* Assets.xcassets */,
 				B8DF7597202822D400D3E6BA /* LaunchScreen.storyboard */,
 				B8DF759A202822D400D3E6BA /* Info.plist */,
-				B8DF7592202822D400D3E6BA /* YoutubeLikeApp.xcdatamodeld */,
-				B8041B2C202977B900CA4CFA /* CustomToolBarView.swift */,
 			);
 			path = YoutubeLikeApp;
 			sourceTree = "<group>";
